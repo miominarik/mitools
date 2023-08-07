@@ -12,7 +12,7 @@ function SQLTester() {
             let parsedQuery = "";
             try {
                 // Parsujeme SQL dotaz pomocou sql-parser knižnice
-                let parsedQuery = sql_parser.parse(sql_query);
+                parsedQuery = sql_parser.parse(sql_query);
             } catch (e) {
                 chyby.push({pozicia: null, sprava: e});
             }
