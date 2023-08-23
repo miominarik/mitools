@@ -82,8 +82,9 @@ function Navbar({router}) {
                                 <span className="text-gray-700 text-lg ms-3">MiTools</span>
                             </div>
                             <div></div>
-                            <div><Link className="text-gray-500 text-sm" to="https://github.com" target="_blank"
-                                       rel="noopener noreferrer">Prispejte na GitHubu</Link></div>
+                            <div><Link className="text-gray-500 text-sm" to="https://github.com/miominarik/mitools"
+                                       target="_blank"
+                                       rel="noopener noreferrer">GitHub</Link></div>
                         </div>
                     </div>
                 </nav>
