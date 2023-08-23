@@ -38,6 +38,15 @@ npm install
 npm start
 ```
 
+## Deployment
+
+Build website for deploy on internet
+```sh
+cd mitools
+npm install
+npm run build
+```
+
 ## License
 
 MIT
