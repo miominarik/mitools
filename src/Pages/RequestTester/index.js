@@ -121,8 +121,8 @@ function RequestTester() {
     return (
         <div>
             <strong className="text-xl">Request Tester</strong>
-            <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
-                <div className="col-span-1 p-4">
+            <div className="grid grid-cols-6 gap-4">
+                <div className="xl:col-start-1 xl:col-end-3 lg:col-start-1 lg:col-end-3 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold py-4">Request Type</label>
                         <select id="request_type"
@@ -135,7 +135,7 @@ function RequestTester() {
                         </select>
                     </div>
                 </div>
-                <div className="col-span-3 p-4">
+                <div className="xl:col-start-3 xl:col-end-7 lg:col-start-3 lg:col-end-7 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold py-4">URL</label>
                         <input type="text"
@@ -143,7 +143,7 @@ function RequestTester() {
                                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"/>
                     </div>
                 </div>
-                <div className="col-span-2 p-4">
+                <div className="xl:col-start-1 xl:col-end-4 lg:col-start-1 lg:col-end-4 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold">Body</label>
                         <textarea
@@ -151,7 +151,7 @@ function RequestTester() {
                             className="w-full h-80 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"></textarea>
                     </div>
                 </div>
-                <div className="col-span-2 p-4">
+                <div className="xl:col-start-4 xl:col-end-7 lg:col-start-4 lg:col-end-7 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold">Result</label>
                         <textarea

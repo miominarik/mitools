@@ -3,16 +3,16 @@ import logo from '../logo.png';
 
 function Navbar({router}) {
     return (
-        <div className="sticky top-0 flex">
-            <div className="bg-white w-64 h-screen shadow-lg sticky top-0">
+        <div className="flex">
+            <div className="hidden md:block w-64 bg-white h-screen shadow-lg sidebar">
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold text-center">Main Menu</h2>
+                    <h2 className="text-lg font-semibold text-center">Tools Menu</h2>
                     <ul className="mt-4">
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
                         <li>
                             <NavLink to="/"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
-                                Home Page
+                                Home page
                             </NavLink>
                         </li>
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
@@ -67,12 +67,23 @@ function Navbar({router}) {
                     <div className="container mx-auto px-4">
                         <div className="flex items-center justify-between h-16">
                             <div className="flex items-center">
+                                <div className="md:hidden">
+                                    <button className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => {
+                                        const sidebar = document.querySelector(".sidebar");
+                                        sidebar.classList.toggle("hidden");
+                                    }}>
+                                        <svg className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 24 24">
+                                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <img src={logo} alt="fdsfsf" width="50"/>
                                 <span className="text-gray-700 text-lg ms-3">MiTools</span>
                             </div>
                             <div></div>
                             <div><Link className="text-gray-500 text-sm" to="https://github.com" target="_blank"
-                                       rel="noopener noreferrer">Github Contribute</Link></div>
+                                       rel="noopener noreferrer">Prispejte na GitHubu</Link></div>
                         </div>
                     </div>
                 </nav>

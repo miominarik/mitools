@@ -21,7 +21,7 @@ function JsonMinifier() {
     return (
         <div>
             <strong className="text-xl">JSON Minifier</strong>
-            <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+            <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">

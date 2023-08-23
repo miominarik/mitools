@@ -58,8 +58,8 @@ function RandomTextGenerator() {
     return (
         <div>
             <strong className="text-xl">Random Text Generator</strong>
-            <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
-                <div className="col-span-1 p-4">
+            <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1">
+                <div className="p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold py-4">Count</label>
                         <input
@@ -73,7 +73,7 @@ function RandomTextGenerator() {
                         ></input>
                     </div>
                 </div>
-                <div className="col-span-1 p-4">
+                <div className="p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold py-4">Type</label>
                         <select
@@ -86,27 +86,27 @@ function RandomTextGenerator() {
                         </select>
                     </div>
                 </div>
-                <div className="col-span-1 p-4">
+                <div className="p-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 font-semibold py-4">Letter counter</label>
                         <strong id="letter_counter">0</strong>
                     </div>
                 </div>
-                <div className="col-span-1 p-4">
+                <div className="p-4">
                     <div className="mb-4">
                         <button type="button" className="rounded-2xl bg-blue-400 hover:bg-blue-500 p-2 mt-14" onClick={generateRandomText}>Generate</button>
                         <button type="button" className="rounded-2xl bg-orange-400 hover:bg-orange-500 ml-2 p-2 mt-14" onClick={copyRandomText}>Copy text</button>
                     </div>
                 </div>
-                <div className="col-span-4 p-4">
-                    <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">SQL result</label>
-                        <textarea
-                            id="text_result"
-                            className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
-                            disabled={true}
-                        ></textarea>
-                    </div>
+            </div>
+            <div className="col-start-1 col-end-5">
+                <div className="mb-4">
+                    <label className="block text-gray-700 font-semibold py-4">Generated text</label>
+                    <textarea
+                        id="text_result"
+                        className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                        disabled={true}
+                    ></textarea>
                 </div>
             </div>
         </div>
