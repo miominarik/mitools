@@ -1,7 +1,7 @@
 import {Link, NavLink} from "react-router-dom";
 import logo from '../logo.png';
 
-function Navbar({actual_version}, {router}) {
+function Navbar({actual_version,router}) {
     return (
         <div className="flex">
             <div className="hidden md:block w-70 bg-white h-screen shadow-lg sidebar">
