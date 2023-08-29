@@ -20,3 +20,10 @@ a.active{
   position: absolute; bottom: 0;
   margin-bottom: 10px;
 }
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+.pre-scroll {
+  overflow-y: auto;
+}

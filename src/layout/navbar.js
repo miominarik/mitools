@@ -4,7 +4,7 @@ import logo from '../logo.png';
 function Navbar({actual_version,router}) {
     return (
         <div className="flex">
-            <div className="hidden md:block w-70 bg-white h-screen shadow-lg sidebar">
+            <div className="hidden md:block w-70 bg-white h-screen shadow-lg sidebar sticky top-0">
                 <div className="p-4">
                     <h2 className="text-lg font-semibold text-center">Tools Menu</h2>
                     <ul className="mt-4">
@@ -46,6 +46,14 @@ function Navbar({actual_version,router}) {
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
                                 <i className="fa-solid fa-code-pull-request me-1"></i>
                                 Request Tester
+                            </NavLink>
+                        </li>
+                        <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
+                        <li>
+                            <NavLink to="/request_catcher"
+                                     className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-magnet me-1"></i>
+                                Request Catcher
                             </NavLink>
                         </li>
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
