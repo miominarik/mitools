@@ -7,7 +7,7 @@ function Base64EncodeDecode() {
         if (base64_text !== "" && base64_text !== undefined && base64_text !== null) {
             let final_base64 = "";
             try {
-                final_base64 = Base64.btoa(base64_text);
+                final_base64 = Base64.encode(base64_text);
             } catch (error) {
                 final_base64 = 'Invalid Text: ' + error.message
             }
@@ -24,7 +24,7 @@ function Base64EncodeDecode() {
         if (base64_text !== "" && base64_text !== undefined && base64_text !== null) {
             let final_base64 = "";
             try {
-                final_base64 = Base64.atob(base64_text);
+                final_base64 = Base64.decode(base64_text);
             } catch (error) {
                 final_base64 = 'Invalid Bae64 string: ' + error.message
             }
