@@ -18,11 +18,11 @@ All this tools at one place
 
 MiTools uses a number of open source projects to work properly:
 
-- [ReactJS] - HTML enhanced for web apps!
-- [Axios] - awesome web-based text editor
-- [js-base64] - Markdown parser done right. Fast and easy to extend.
-- [js-sql-parser] - great UI boilerplate for modern web apps
-- [sweetalert2] - evented I/O for the backend
+- [ReactJS] - UI-building JavaScript library with components.
+- [Axios] - Promises-based HTTP client for requests.
+- [js-base64] - Handles Base64 encoding/decoding.
+- [js-sql-parser] - Parses and works with SQL queries.
+- [sweetalert2] - Creates appealing pop-up modals.
 
 And of course MiTools itself is open source with a [public repository][mitools]
 on GitHub.

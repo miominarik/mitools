@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 .pointer{
   cursor: pointer;
@@ -9,4 +10,13 @@
 a.active{
   color: #47b614;
   background-color: rgba(156, 163, 175, 0.10);
+}
+
+.container{
+  max-width: -webkit-fill-available;
+}
+
+.version{
+  position: absolute; bottom: 0;
+  margin-bottom: 10px;
 }

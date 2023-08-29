@@ -1,10 +1,10 @@
 import {Link, NavLink} from "react-router-dom";
 import logo from '../logo.png';
 
-function Navbar({router}) {
+function Navbar({actual_version}, {router}) {
     return (
         <div className="flex">
-            <div className="hidden md:block w-64 bg-white h-screen shadow-lg sidebar">
+            <div className="hidden md:block w-70 bg-white h-screen shadow-lg sidebar">
                 <div className="p-4">
                     <h2 className="text-lg font-semibold text-center">Tools Menu</h2>
                     <ul className="mt-4">
@@ -12,6 +12,7 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-house me-1"></i>
                                 Home page
                             </NavLink>
                         </li>
@@ -19,6 +20,7 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/json_formatter"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-square-check me-1"></i>
                                 JSON Formatter
                             </NavLink>
                         </li>
@@ -26,6 +28,7 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/json_minifier"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-minimize me-1"></i>
                                 JSON Minifier
                             </NavLink>
                         </li>
@@ -33,6 +36,7 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/base64_encodedecode"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-shield me-1"></i>
                                 Base64 Encode/Decode
                             </NavLink>
                         </li>
@@ -40,6 +44,7 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/request_tester"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-code-pull-request me-1"></i>
                                 Request Tester
                             </NavLink>
                         </li>
@@ -47,6 +52,7 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/sql_tester"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-database me-1"></i>
                                 SQL Tester
                             </NavLink>
                         </li>
@@ -54,17 +60,19 @@ function Navbar({router}) {
                         <li>
                             <NavLink to="/random_text_generator"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-file-word me-1"></i>
                                 Random Text Generator
                             </NavLink>
                         </li>
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
                     </ul>
+                    <small className="version">Version: {actual_version}</small>
                 </div>
             </div>
 
             <div className="flex-grow">
                 <nav className="bg-white shadow-lg sticky top-0">
-                    <div className="container mx-auto px-4">
+                    <div className="container px-4">
                         <div className="flex items-center justify-between h-16">
                             <div className="flex items-center">
                                 <div className="md:hidden">
@@ -84,7 +92,8 @@ function Navbar({router}) {
                             <div></div>
                             <div><Link className="text-gray-500 text-sm" to="https://github.com/miominarik/mitools"
                                        target="_blank"
-                                       rel="noopener noreferrer">GitHub</Link></div>
+                                       rel="noopener noreferrer"><i className="fa-brands fa-github"></i> GitHub</Link>
+                            </div>
                         </div>
                     </div>
                 </nav>
