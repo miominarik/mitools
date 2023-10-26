@@ -73,6 +73,14 @@ function Navbar({actual_version,router}) {
                             </NavLink>
                         </li>
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
+                        <li>
+                            <NavLink to="/css_tools"
+                                     className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-brands fa-css3 me-1"></i>
+                                CSS Minifier/Formatter
+                            </NavLink>
+                        </li>
+                        <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
                     </ul>
                     <small className="version">Version: {actual_version}</small>
                 </div>

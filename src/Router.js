@@ -7,6 +7,7 @@ import Base64EncodeDecode from "./Pages/Base64_EncodeDecode";
 import SQLTester from "./Pages/SqlTester";
 import RandomTextGenerator from "./Pages/RandomTextGenerator";
 import RequestCatcher from "./Pages/RequestCatcher";
+import CssTools from "./Pages/CssTools";
 
 function Router() {
     return (
@@ -20,6 +21,7 @@ function Router() {
                 <Route path="/request_catcher" element={<RequestCatcher />} />
                 <Route path="/sql_tester" element={<SQLTester />} />
                 <Route path="/random_text_generator" element={<RandomTextGenerator />} />
+                <Route path="/css_tools" element={<CssTools />} />
             </Routes>
         </>
     )
