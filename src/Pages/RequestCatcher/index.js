@@ -6,8 +6,21 @@ import {v4 as uuidv4} from 'uuid';
 const api_url = process.env.REACT_APP_API_URL;
 
 function RequestCatcher() {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
+        const GenerateCatchUrl = (uuid_comp) => {
+            const url = api_url + '/create';
+            sendPostRequest(url, {uuid: uuid_comp})
+                .then((response) => {
+                    if (response.url && response.url !== undefined && response.url !== null && response.url !== "") {
+                        const catch_url = document.getElementById('catch_url');
+                        catch_url.value = api_url + "/catch/" + response.url;
+                        let uuid = false;
+                        uuid = response.url;
+                        showLog(uuid);
+                    }
+                })
+        }
+        
         var existingCookie = getCookie('uuid_comp');
         if (!existingCookie) {
             const newUUID = uuidv4();
@@ -38,25 +51,11 @@ function RequestCatcher() {
         document.cookie = updatedCookie;
     }
 
-    let uuid = false;
     const [lastData, setLastData] = useState([
         {method: "No requests", time: ""},
     ]);
     const [jsonModal, setJsonModal] = useState([]);
     const [isModalOpen, setOpenModal] = useState(false);
-
-    const GenerateCatchUrl = (uuid_comp) => {
-        const url = api_url + '/create';
-        sendPostRequest(url, {uuid: uuid_comp})
-            .then((response) => {
-                if (response.url && response.url !== undefined && response.url !== null && response.url !== "") {
-                    const catch_url = document.getElementById('catch_url');
-                    catch_url.value = api_url + "/catch/" + response.url;
-                    uuid = response.url;
-                    showLog(uuid);
-                }
-            })
-    }
 
     async function sendPostRequest(url, data = null) {
         try {
