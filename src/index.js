@@ -11,6 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
+            {
+                process.env.REACT_APP_PRODUCTION_MODE === "1" ?
+                    (<div className="dev_mode">Developer Mode</div>)
+                    : ("")
+            }
             <App actual_version={actual_version}/>
         </BrowserRouter>
     </React.StrictMode>

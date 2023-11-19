@@ -3,17 +3,17 @@ import {useEffect, useState} from "react";
 import FireAlert from "../../Components/Alerts";
 import {v4 as uuidv4} from 'uuid';
 
-
-const api_url = "https://api.mitools.eu";
+const api_url = process.env.REACT_APP_API_URL;
 
 function RequestCatcher() {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         var existingCookie = getCookie('uuid_comp');
         if (!existingCookie) {
             const newUUID = uuidv4();
             createCookie('uuid_comp', newUUID, {expires: 365});
         }
-        var existingCookie = getCookie('uuid_comp');
+        existingCookie = getCookie('uuid_comp');
         GenerateCatchUrl(existingCookie)
     }, []);
 
@@ -49,13 +49,11 @@ function RequestCatcher() {
         const url = api_url + '/create';
         sendPostRequest(url, {uuid: uuid_comp})
             .then((response) => {
-                if (response.url && response.url != undefined && response.url != null && response.url != "") {
+                if (response.url && response.url !== undefined && response.url !== null && response.url !== "") {
                     const catch_url = document.getElementById('catch_url');
                     catch_url.value = api_url + "/catch/" + response.url;
                     uuid = response.url;
-                    let log_looking = setInterval(() => {
-                        showLog(uuid);
-                    }, 3000);
+                    showLog(uuid);
                 }
             })
     }
@@ -65,23 +63,24 @@ function RequestCatcher() {
             const response = await axios.post(url, data);
             return response.data;
         } catch (error) {
-            console.error("Chyba pri POST požiadavke:", error);
+            console.error("Error wit POST request:", error);
         }
     }
 
     const showLog = (id) => {
         let url = api_url + '/log/' + id;
-        sendPostRequest(url)
-            .then((response) => {
-                if (response.status && response.status === 'success') {
-                    if (response.data.length > 0) {
-                        const data = JSON.parse(response.data);
-                        if (data.length > 0) {
-                            setLastData(data);
-                        }
-                    }
-                }
-            })
+        const eventSource = new EventSource(url);
+
+        eventSource.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.length > 0) {
+                setLastData(data);
+            }
+        };
+
+        return () => {
+            eventSource.close();
+        };
     }
 
     const openModal = (index) => {
@@ -145,7 +144,7 @@ function RequestCatcher() {
                                     <td className="border px-4 py-2">{item.method}</td>
                                     <td className="border px-4 py-2">{item.time}</td>
                                     <td className="border px-4 py-2">
-                                        <span className={item.time == "" ? "hidden" : "cursor-pointer text-blue-500 hover:underline"}
+                                        <span className={item.time === "" ? "hidden" : "cursor-pointer text-blue-500 hover:underline"}
                                               onClick={() => openModal(index)}><i className="fa-solid fa-circle-info me-1"></i>Details</span>
                                     </td>
                                 </tr>

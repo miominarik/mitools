@@ -2,22 +2,26 @@ const express = require('express');
 const fs = require('fs');
 const {v5: uuidv5} = require('uuid');
 const cors = require('cors');
+const {configDotenv} = require("dotenv");
+require('dotenv').config()
 
 const app = express();
+configDotenv({
+    path: "../.env"
+})
 app.use(express.json());
-app.use(cors({ origin: 'https://mitools.eu' })); // Povoluje CORS pro daný origin
 
-// Definujeme názov (namespace) - konštantu alebo vlastný reťazec
-const MY_NAMESPACE = '486304d6-46a2-11ee-9760-325096b39f47';
-
-const requestLog = {};
+if (process.env.REACT_APP_PRODUCTION_MODE == 1) {
+    app.use(cors({origin: '*'})); // Allow all origin for testing purpose
+} else {
+    app.use(cors({origin: process.env.REACT_APP_URL})); // Allow just specific origin for production
+}
 
 app.post('/create', cors(), (req, res) => {
     if (req.body.uuid) {
-        const uniqueId = uuidv5(req.body.uuid, MY_NAMESPACE);
-        requestLog[uniqueId] = [];
+        const uniqueId = uuidv5(req.body.uuid, process.env.REACT_APP_UUID_CONSTANT);
         const jsonFilename = `keys/${uniqueId}.json`;
-        fs.writeFileSync(jsonFilename, JSON.stringify(requestLog[uniqueId], null, 2));
+        fs.writeFileSync(jsonFilename, JSON.stringify([], null, 2));
         res.json({url: `${uniqueId}`});
     }
 });
@@ -25,39 +29,48 @@ app.post('/create', cors(), (req, res) => {
 app.use('/catch/:id', cors(), (req, res) => {
     const requestId = req.params.id;
     const jsonFilename = `keys/${requestId}.json`;
-    if (!requestLog[requestId]) {
-        requestLog[requestId] = [];
-        fs.writeFileSync(jsonFilename, JSON.stringify(requestLog[requestId], null, 2));
+    if (!fs.existsSync(jsonFilename)) {
+        fs.writeFileSync(jsonFilename, JSON.stringify([], null, 2));
     }
+    let actual_json = fs.readFileSync(jsonFilename, 'utf-8');
+    actual_json = JSON.parse(actual_json);
 
-    requestLog[requestId].push({
+    actual_json.push({
         method: req.method,
         url: req.url,
         data: req.body,
         headers: req.headers,
         time: getCurrentTime(),
     });
-    fs.writeFileSync(jsonFilename, JSON.stringify(requestLog[requestId], null, 2));
+    fs.writeFileSync(jsonFilename, JSON.stringify(actual_json, null, 2));
 
     res.status(202).json({
         status: 'success'
     });
 });
 
-app.post('/log/:id', cors(), (req, res) => {
+app.use('/log/:id', cors(), (req, res) => {
     const requestId = req.params.id;
     const jsonFilename = `keys/${requestId}.json`;
-    if (!requestLog[requestId]) {
-        return res.status(404).json({status: 'failed'});
+    if (!fs.existsSync(jsonFilename)) {
+        fs.writeFileSync(jsonFilename, JSON.stringify([], null, 2));
     }
-    const logContents = fs.readFileSync(jsonFilename, 'utf-8');
-    res.json({
-        status: 'success',
-        data: logContents
+    let logContents = fs.readFileSync(jsonFilename, 'utf-8');
+
+    // Odstráňte nové riadky a ohraničte obsah podľa formátu text/event-stream
+    logContents = logContents.replace(/\n/g, ''); // Odstráňuje nové riadky
+
+    res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
     });
+    
+    // Odoslanie dát klientovi
+    res.write(`data: ${logContents}\n\n`);
 });
 
-const PORT = 3000;
+const PORT = 4000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
