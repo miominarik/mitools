@@ -3,17 +3,15 @@ import {useEffect, useState} from "react";
 import FireAlert from "../../Components/Alerts";
 import {v4 as uuidv4} from 'uuid';
 
-const api_url = process.env.REACT_APP_API_URL;
-
 function RequestCatcher() {
     useEffect(() => {
         const GenerateCatchUrl = (uuid_comp) => {
-            const url = api_url + '/create';
+            const url = process.env.REACT_APP_API_URL + '/create';
             sendPostRequest(url, {uuid: uuid_comp})
                 .then((response) => {
                     if (response.url && response.url !== undefined && response.url !== null && response.url !== "") {
                         const catch_url = document.getElementById('catch_url');
-                        catch_url.value = api_url + "/catch/" + response.url;
+                        catch_url.value = process.env.REACT_APP_API_URL + "/catch/" + response.url;
                         let uuid = false;
                         uuid = response.url;
                         showLog(uuid);
@@ -67,7 +65,7 @@ function RequestCatcher() {
     }
 
     const showLog = (id) => {
-        let url = api_url + '/log/' + id;
+        let url = process.env.REACT_APP_API_URL + '/log/' + id;
         const eventSource = new EventSource(url);
 
         eventSource.onmessage = (event) => {
