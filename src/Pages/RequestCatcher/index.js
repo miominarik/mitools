@@ -74,10 +74,6 @@ function RequestCatcher() {
                 setLastData(data);
             }
         };
-
-        return () => {
-            eventSource.close();
-        };
     }
 
     const openModal = (index) => {
