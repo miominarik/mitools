@@ -55,19 +55,25 @@ app.use('/log/:id', cors(), (req, res) => {
     if (!fs.existsSync(jsonFilename)) {
         fs.writeFileSync(jsonFilename, JSON.stringify([], null, 2));
     }
-    let logContents = fs.readFileSync(jsonFilename, 'utf-8');
-
-    // Odstráňte nové riadky a ohraničte obsah podľa formátu text/event-stream
-    logContents = logContents.replace(/\n/g, ''); // Odstráňuje nové riadky
-
     res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive'
     });
-    
-    // Odoslanie dát klientovi
-    res.write(`data: ${logContents}\n\n`);
+    let logContents = "";
+    const interval = setInterval(() => {
+        logContents = fs.readFileSync(jsonFilename, 'utf-8');
+        // Odstráňte nové riadky a ohraničte obsah podľa formátu text/event-stream
+        logContents = logContents.replace(/\n/g, ''); // Odstráňuje nové riadky
+
+       
+        res.write('data: ' + logContents + '\n\n');
+    }, 1000);
+
+    req.on('close', () => {
+        clearInterval(interval);
+    });
+
 });
 
 const PORT = 4000;
