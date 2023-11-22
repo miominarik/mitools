@@ -2,16 +2,17 @@ import axios from 'axios';
 import {useEffect, useState} from "react";
 import FireAlert from "../../Components/Alerts";
 import {v4 as uuidv4} from 'uuid';
+import Pusher from "pusher-js";
 
 function RequestCatcher() {
     useEffect(() => {
         const GenerateCatchUrl = (uuid_comp) => {
-            const url = process.env.REACT_APP_API_URL + '/create';
+            const url = process.env.REACT_APP_API_URL + '/api/create';
             sendPostRequest(url, {uuid: uuid_comp})
                 .then((response) => {
                     if (response.url && response.url !== undefined && response.url !== null && response.url !== "") {
                         const catch_url = document.getElementById('catch_url');
-                        catch_url.value = process.env.REACT_APP_API_URL + "/catch/" + response.url;
+                        catch_url.value = process.env.REACT_APP_API_URL + "/api/catch/" + response.url;
                         let uuid = false;
                         uuid = response.url;
                         showLog(uuid);
@@ -64,17 +65,25 @@ function RequestCatcher() {
         }
     }
 
-    const showLog = (id) => {
-        let url = process.env.REACT_APP_API_URL + '/log/' + id;
-        const eventSource = new EventSource(url);
-
-        eventSource.onmessage = (event) => {
-            const data = JSON.parse(event.data);
+    const showLog = (uuid) => {
+        var pusher = new Pusher('app-key', {
+            wsHost: 'wss.mitools.eu',
+            wsPort: 443,
+            forceTLS: true,
+            encrypted: true,
+            disableStats: true,
+            enabledTransports: ['ws', 'wss'],
+            cluster: 'eu'
+        });
+        var channel = pusher.subscribe(uuid);
+        channel.bind("Mitools", function(response) {
+            const data = JSON.parse(response);
             if (data.length > 0) {
                 setLastData(data);
             }
-        };
-    }
+        });
+    };
+
 
     const openModal = (index) => {
         if (index !== false) {
