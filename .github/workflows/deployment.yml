@@ -11,6 +11,7 @@ jobs:
     - name: 'Create env file'
       run: |
         echo "${{ vars.ENV_FILE }}" > .env
+        echo "${{ vars.ENV_FILE_API }}" > api/.env
 
     - name: Use Node.js 20
       uses: actions/setup-node@v2
@@ -21,6 +22,16 @@ jobs:
       run: |
         npm install
         npm run build
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        
+    - name: Run PHP Artisan commands
+      run: |
+        cd api
+        php artisan route:cache
     
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
