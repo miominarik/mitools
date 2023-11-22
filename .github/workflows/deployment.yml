@@ -8,10 +8,13 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
       
-    - name: 'Create env file'
+    - name: 'Create env file frontend'
       run: |
         echo "${{ vars.ENV_FILE }}" > .env
-        echo "${{ vars.ENV_FILE_API }}" > api/.env
+        
+    - name: 'Create env file backend'
+      run: |
+        echo "${{ vars.ENV_FILE_API }}" > api/.env    
 
     - name: Use Node.js 20
       uses: actions/setup-node@v2
@@ -31,6 +34,7 @@ jobs:
     - name: Run PHP Artisan commands
       run: |
         cd api
+        composer install
         php artisan route:cache
     
     - name: Sync files
