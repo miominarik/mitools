@@ -11,6 +11,7 @@ MiTools is a collection of tools that every programmer needs for his job.
 - GET/POST/PUT/PATCH/DELETE Request tester
 - SQL tester
 - Random text generator
+- CSS Minifier/Formatter
 
 All this tools at one place
 
@@ -23,6 +24,7 @@ MiTools uses a number of open source projects to work properly:
 - [js-base64] - Handles Base64 encoding/decoding.
 - [js-sql-parser] - Parses and works with SQL queries.
 - [sweetalert2] - Creates appealing pop-up modals.
+- [laravel] - Most popular PHP framework.
 
 And of course MiTools itself is open source with a [public repository][mitools]
 on GitHub.
@@ -59,3 +61,4 @@ MIT
 [js-base64]: <https://github.com/dankogai/js-base64>
 [js-sql-parser]: <https://github.com/JavaScriptor/js-sql-parser>
 [sweetalert2]: <https://github.com/sweetalert2/sweetalert2>
+[laravel]: <https://laravel.com>
