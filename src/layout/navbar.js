@@ -20,7 +20,7 @@ function Navbar({actual_version, router}) {
         <div className="flex">
             <div className="hidden md:block w-70 bg-white dark:bg-slate-800 h-screen shadow-lg sidebar sticky top-0">
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold text-center text-black dark:text-white">Tools Menum</h2>
+                    <h2 className="text-lg font-semibold text-center text-black dark:text-white">Tools Menu</h2>
                     <ul className="mt-4">
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
                         <li>
