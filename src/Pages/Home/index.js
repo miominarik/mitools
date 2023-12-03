@@ -7,7 +7,7 @@ function Home() {
     useEffect(() => {
         const fetchFile = async () => {
             try {
-                const response = await fetch('http://localhost:3000/Quotes.json');
+                const response = await fetch(process.env.REACT_APP_URL + '/Quotes.json');
                 const data = await response.text();
                 if (data) {
                     const decoded_json = JSON.parse(data);
