@@ -8,6 +8,7 @@ import SQLTester from "./Pages/SqlTester";
 import RandomTextGenerator from "./Pages/RandomTextGenerator";
 import RequestCatcher from "./Pages/RequestCatcher";
 import CssTools from "./Pages/CssTools";
+import TimeTools from "./Pages/TimeTools";
 
 function Router() {
     return (
@@ -22,6 +23,7 @@ function Router() {
                 <Route path="/sql_tester" element={<SQLTester />} />
                 <Route path="/random_text_generator" element={<RandomTextGenerator />} />
                 <Route path="/css_tools" element={<CssTools />} />
+                <Route path="/time_tools" element={<TimeTools />} />
             </Routes>
         </>
     )

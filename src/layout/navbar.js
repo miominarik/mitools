@@ -26,6 +26,14 @@ function Navbar({actual_version,router}) {
                         </li>
                         <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
                         <li>
+                            <NavLink to="/time_tools"
+                                     className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
+                                <i className="fa-solid fa-clock me-1"></i>
+                                Timestamp Tools
+                            </NavLink>
+                        </li>
+                        <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
+                        <li>
                             <NavLink to="/json_minifier"
                                      className={({isActive}) => "block px-4 py-2 text-gray-800 hover:bg-gray-100 " + (isActive ? 'active' : '')}>
                                 <i className="fa-solid fa-minimize me-1"></i>
