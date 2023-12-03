@@ -74,15 +74,15 @@ function CssTools() {
 
     return (
         <div>
-            <strong className="text-xl">CSS Minifier</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">CSS Minifier</strong>
             <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Input</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Input</label>
                             <textarea
                                 id="message1"
-                                className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 placeholder="Paste here your formated CSS"
                                 onChange={minify_css}
                             ></textarea>
@@ -92,10 +92,10 @@ function CssTools() {
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result</label>
                             <textarea
                                 id="message2"
-                                className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 placeholder="CSS minified result"
                                 disabled={true}
                             ></textarea>
@@ -104,15 +104,15 @@ function CssTools() {
                 </div>
             </div>
             <hr/>
-            <strong className="text-xl">CSS Formatter</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">CSS Formatter</strong>
             <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Input</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Input</label>
                             <textarea
                                 id="message3"
-                                className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 placeholder="Paste here CSS minified string"
                                 onChange={css_formatter}
                             ></textarea>
@@ -122,10 +122,10 @@ function CssTools() {
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result</label>
                             <textarea
                                 id="message4"
-                                className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 placeholder="CSS formated result"
                                 disabled={true}
                             ></textarea>

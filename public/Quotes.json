@@ -1,0 +1,218 @@
+[
+  {
+    "quote": "The best error message is the one that never shows up.",
+    "author": "Thomas Fuchs"
+  },
+  {
+    "quote": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+    "author": "John Woods"
+  },
+  {
+    "quote": "The most disastrous thing that you can ever learn is your first programming language.",
+    "author": "Alan Kay"
+  },
+  {
+    "quote": "Programming isn’t about what you know; it’s about what you can figure out.",
+    "author": "Chris Pine"
+  },
+  {
+    "quote": "The art of programming is the skill of controlling complexity.",
+    "author": "Marijn Haverbeke"
+  },
+  {
+    "quote": "A language that doesn't affect the way you think about programming is not worth knowing.",
+    "author": "Alan Perlis"
+  },
+  {
+    "quote": "The best way to predict the future is to invent it.",
+    "author": "Alan Kay"
+  },
+  {
+    "quote": "The most important skill for a programmer is to learn how to learn.",
+    "author": "John Ousterhout"
+  },
+  {
+    "quote": "Code is like humor. When you have to explain it, it’s bad.",
+    "author": "Cory House"
+  },
+  {
+    "quote": "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
+    "author": "Patrick McKenzie"
+  },
+  {
+    "quote": "Simplicity is the soul of efficiency.",
+    "author": "Austin Freeman"
+  },
+  {
+    "quote": "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
+    "author": "Bill Gates"
+  },
+  {
+    "quote": "Programming is the closest thing we have to a superpower.",
+    "author": "Drew Houston"
+  },
+  {
+    "quote": "Don't comment bad code—rewrite it.",
+    "author": "Brian W. Kernighan"
+  },
+  {
+    "quote": "The function of good software is to make the complex appear to be simple.",
+    "author": "Grady Booch"
+  },
+  {
+    "quote": "First, solve the problem. Then, write the code.",
+    "author": "John Johnson"
+  },
+  {
+    "quote": "Learning to code is useful no matter what your career ambitions are.",
+    "author": "Arianna Huffington"
+  },
+  {
+    "quote": "In software, the only constant is change.",
+    "author": "Anonymous"
+  },
+  {
+    "quote": "If debugging is the process of removing software bugs, then programming must be the process of putting them in.",
+    "author": "Edsger Dijkstra"
+  },
+  {
+    "quote": "Software is a great combination of artistry and engineering.",
+    "author": "Bill Gates"
+  },
+  {
+    "quote": "The computer was born to solve problems that did not exist before.",
+    "author": "Bill Gates"
+  },
+  {
+    "quote": "Talk is cheap. Show me the code.",
+    "author": "Linus Torvalds"
+  },
+  {
+    "quote": "Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.",
+    "author": "Mosher’s Law of Software Engineering"
+  },
+  {
+    "quote": "Good code is its own best documentation.",
+    "author": "Steve McConnell"
+  },
+  {
+    "quote": "The most important aspect of a software is its ability to be maintained.",
+    "author": "Meir M."
+  },
+  {
+    "quote": "Coding is not just code, but it's a way to solve problems.",
+    "author": "Anitha Vadavatha"
+  },
+  {
+    "quote": "Optimism is an occupational hazard of programming: feedback is the treatment.",
+    "author": "Kent Beck"
+  },
+  {
+    "quote": "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "quote": "The most effective debugging tool is still careful thought, coupled with judiciously placed print statements.",
+    "author": "Brian W. Kernighan"
+  },
+  {
+    "quote": "You might not think that programmers are artists, but programming is an extremely creative profession. It’s logic-based creativity.",
+    "author": "John Romero"
+  },
+  {
+    "quote": "If you optimize everything, you will always be unhappy.",
+    "author": "Donald Knuth"
+  },
+  {
+    "quote": "The only way to learn a new programming language is by writing programs in it.",
+    "author": "Dennis Ritchie"
+  },
+  {
+    "quote": "When in doubt, use brute force.",
+    "author": "Ken Thompson"
+  },
+  {
+    "quote": "Programming is not a zero-sum game. Teaching something to a fellow programmer doesn’t take it away from you.",
+    "author": "John Carmack"
+  },
+  {
+    "quote": "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.",
+    "author": "Eagleson's Law"
+  },
+  {
+    "quote": "I'm not a great programmer; I'm just a good programmer with great habits.",
+    "author": "Kent Beck"
+  },
+  {
+    "quote": "Don’t worry about people stealing your ideas. If your ideas are any good, you’ll have to ram them down people’s throats.",
+    "author": "Howard Aiken"
+  },
+  {
+    "quote": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "quote": "A clever person solves a problem. A wise person avoids it.",
+    "author": "Albert Einstein"
+  },
+  {
+    "quote": "Walking on water and developing software from a specification are easy if both are frozen.",
+    "author": "Edward V. Berard"
+  },
+  {
+    "quote": "Don’t write better error messages, write code that doesn’t need them.",
+    "author": "Jason C. McDonald"
+  },
+  {
+    "quote": "Software is like sex: it’s better when it’s free.",
+    "author": "Linus Torvalds"
+  },
+  {
+    "quote": "Good software, like wine, takes time.",
+    "author": "Joel Spolsky"
+  },
+  {
+    "quote": "The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.",
+    "author": "Seymour Cray"
+  },
+  {
+    "quote": "The most important part of writing a program is designing the data structures.",
+    "author": "Dan Bricklin"
+  },
+  {
+    "quote": "Make it work, make it right, make it fast.",
+    "author": "Kent Beck"
+  },
+  {
+    "quote": "Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.",
+    "author": "Eric S. Raymond"
+  },
+  {
+    "quote": "Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves.",
+    "author": "Alan Kay"
+  },
+  {
+    "quote": "Without requirements or design, programming is the art of adding bugs to an empty text file.",
+    "author": "Louis Srygley"
+  },
+  {
+    "quote": "The most damaging phrase in the language is: 'It’s always been done that way.'",
+    "author": "Grace Hopper"
+  },
+  {
+    "quote": "The function of good software is to make the complex appear to be simple.",
+    "author": "Grady Booch"
+  },
+  {
+    "quote": "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
+    "author": "Patrick McKenzie"
+  },
+  {
+    "quote": "Simplicity is the soul of efficiency.",
+    "author": "Austin Freeman"
+  },
+  {
+    "quote": "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
+    "author": "Bill Gates"
+  }
+]

@@ -57,15 +57,15 @@ function RandomTextGenerator() {
 
     return (
         <div>
-            <strong className="text-xl">Random Text Generator</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">Random Text Generator</strong>
             <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1">
                 <div className="p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">Count</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">Count</label>
                         <input
                             type="number"
                             id="text_count"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                            className="w-full bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                             defaultValue={5}
                             min="1"
                             max="255"
@@ -75,10 +75,10 @@ function RandomTextGenerator() {
                 </div>
                 <div className="p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">Type</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">Type</label>
                         <select
                             id="text_type"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                            className="w-full bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                             onChange={generateRandomText}
                         >
                             <option value="paragraphs">Paragraphs</option>
@@ -88,8 +88,8 @@ function RandomTextGenerator() {
                 </div>
                 <div className="p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">Letter counter</label>
-                        <strong id="letter_counter">0</strong>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">Letter counter</label>
+                        <strong className="text-gray-700 dark:text-white" id="letter_counter">0</strong>
                     </div>
                 </div>
                 <div className="p-4">
@@ -101,10 +101,10 @@ function RandomTextGenerator() {
             </div>
             <div className="col-start-1 col-end-5">
                 <div className="mb-4">
-                    <label className="block text-gray-700 font-semibold py-4">Generated text</label>
+                    <label className="block text-gray-700 dark:text-white font-semibold py-4">Generated text</label>
                     <textarea
                         id="text_result"
-                        className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                        className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                         disabled={true}
                     ></textarea>
                 </div>

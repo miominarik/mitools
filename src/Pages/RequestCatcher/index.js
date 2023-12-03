@@ -110,15 +110,15 @@ function RequestCatcher() {
 
     return (
         <div>
-            <strong className="text-xl">Request Catcher</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">Request Catcher</strong>
             <div className="grid grid-cols-6 gap-4">
                 <div className="xl:col-start-1 xl:col-end-6 lg:col-start-1 lg:col-end-6 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">Catch URL</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">Catch URL</label>
                         <input type="text"
                                id="catch_url"
                                disabled={true}
-                               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"/>
+                               className="w-full bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"/>
                     </div>
                 </div>
                 <div className="xl:col-start-6 xl:col-end-7 lg:col-start-6 lg:col-end-7 col-start-1 col-end-7 p-4">
@@ -131,21 +131,21 @@ function RequestCatcher() {
 
                 <div className="xl:col-start-1 xl:col-end-7 lg:col-start-1 lg:col-end-7 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">Requests</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">Requests</label>
                         <table className="table-auto w-full">
                             <thead>
                             <tr>
-                                <th className="px-4 py-2">Type</th>
-                                <th className="px-4 py-2">Date and time</th>
-                                <th className="px-4 py-2">Details</th>
+                                <th className="px-4 py-2 text-gray-700 dark:text-white">Type</th>
+                                <th className="px-4 py-2 text-gray-700 dark:text-white">Date and time</th>
+                                <th className="px-4 py-2 text-gray-700 dark:text-white">Details</th>
                             </tr>
                             </thead>
                             <tbody id="request_table">
                             {lastData.map((item, index) => (
                                 <tr key={index}>
-                                    <td className="border px-4 py-2">{item.method}</td>
-                                    <td className="border px-4 py-2">{item.time}</td>
-                                    <td className="border px-4 py-2">
+                                    <td className="border px-4 py-2 text-gray-700 dark:text-white">{item.method}</td>
+                                    <td className="border px-4 py-2 text-gray-700 dark:text-white">{item.time}</td>
+                                    <td className="border px-4 py-2 text-gray-700 dark:text-white">
                                         <span className={item.time === "" ? "hidden" : "cursor-pointer text-blue-500 hover:underline"}
                                               onClick={() => openModal(index)}><i className="fa-solid fa-circle-info me-1"></i>Details</span>
                                     </td>

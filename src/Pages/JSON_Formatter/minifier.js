@@ -20,15 +20,15 @@ function JsonMinifier() {
 
     return (
         <div>
-            <strong className="text-xl">JSON Minifier</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">JSON Minifier</strong>
             <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Input</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Input</label>
                             <textarea
                                 id="message1"
-                                className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 placeholder="Paste here your minified JSON"
                                 onChange={format_json}
                             ></textarea>
@@ -38,10 +38,10 @@ function JsonMinifier() {
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result</label>
                             <textarea
                                 id="message2"
-                                className="w-full h-96 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-96 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 placeholder="Formatted result"
                                 disabled={true}
                             ></textarea>

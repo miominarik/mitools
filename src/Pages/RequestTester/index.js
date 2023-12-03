@@ -120,13 +120,13 @@ function RequestTester() {
 
     return (
         <div>
-            <strong className="text-xl">Request Tester</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">Request Tester</strong>
             <div className="grid grid-cols-6 gap-4">
                 <div className="xl:col-start-1 xl:col-end-3 lg:col-start-1 lg:col-end-3 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">Request Type</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">Request Type</label>
                         <select id="request_type"
-                                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+                                className="w-full bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
                             <option value="PUT">PUT</option>
@@ -137,26 +137,26 @@ function RequestTester() {
                 </div>
                 <div className="xl:col-start-3 xl:col-end-7 lg:col-start-3 lg:col-end-7 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">URL</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">URL</label>
                         <input type="text"
                                id="request_url"
-                               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"/>
+                               className="w-full bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"/>
                     </div>
                 </div>
                 <div className="xl:col-start-1 xl:col-end-4 lg:col-start-1 lg:col-end-4 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold">Body</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold">Body</label>
                         <textarea
                             id="request_body"
-                            className="w-full h-80 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"></textarea>
+                            className="w-full h-80 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"></textarea>
                     </div>
                 </div>
                 <div className="xl:col-start-4 xl:col-end-7 lg:col-start-4 lg:col-end-7 col-start-1 col-end-7 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold">Result</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold">Result</label>
                         <textarea
                             id="request_result"
-                            className="w-full h-80 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                            className="w-full h-80 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                             disabled={true}
                         ></textarea>
                     </div>

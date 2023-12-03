@@ -59,14 +59,14 @@ function SQLTester() {
 
     return (
         <div>
-            <strong className="text-xl">Request Tester</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">Request Tester</strong>
             <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
                 <div className="col-span-4 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">SQL query</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">SQL query</label>
                         <textarea
                             id="sql_input"
-                            className="w-full h-72 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                            className="w-full h-72 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                             placeholder="Paste your sql query"
                             onChange={VerifySQL}
                         ></textarea>
@@ -74,10 +74,10 @@ function SQLTester() {
                 </div>
                 <div className="col-span-4 p-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold py-4">SQL result</label>
+                        <label className="block text-gray-700 dark:text-white font-semibold py-4">SQL result</label>
                         <textarea
                             id="sql_result"
-                            className="w-full h-72 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                            className="w-full h-72 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                             disabled={true}
                         ></textarea>
                     </div>

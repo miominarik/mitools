@@ -50,15 +50,15 @@ function TimeTools() {
 
     return (
         <div>
-            <strong className="text-xl">Unix Timestamp to date</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">Unix Timestamp to date</strong>
             <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Unix timestamp</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Unix timestamp</label>
                             <input
                                 type="number"
-                                className="w-full h-10 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 onChange={ConvertUnixToDatetime}
                             ></input>
                         </div>
@@ -67,18 +67,18 @@ function TimeTools() {
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result Datetime (Your time zone)</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result Datetime (Your time zone)</label>
                             <input
                                 type="text"
-                                className="w-full h-10 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 disabled={true}
                                 value={MyTimeZoneDate || ''}
                             ></input>
                         </div><div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result Datetime (GMT)</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result Datetime (GMT)</label>
                             <input
                                 type="text"
-                                className="w-full h-10 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 disabled={true}
                                 value={GMTTimeZoneDate || ''}
                             ></input>
@@ -87,15 +87,15 @@ function TimeTools() {
                 </div>
             </div>
             <hr/>
-            <strong className="text-xl">Date to Unix timestamp</strong>
+            <strong className="text-xl text-gray-700 dark:text-white">Date to Unix timestamp</strong>
             <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Date (YYYY-MM-DD HH:mm:ss)</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Date (YYYY-MM-DD HH:mm:ss)</label>
                             <input
                                 type="text"
-                                className="w-full h-10 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 onChange={ConvertDatetimeToUnix}
                             ></input>
                         </div>
@@ -104,18 +104,18 @@ function TimeTools() {
                 <div className="col-span-1 p-4">
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result Datetime (Your time zone)</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result Datetime (Your time zone)</label>
                             <input
                                 type="text"
-                                className="w-full h-10 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 disabled={true}
                                 value={MyTimeZoneDateUnix || ''}
                             ></input>
                         </div><div className="mb-4">
-                            <label className="block text-gray-700 font-semibold">Result Datetime (GMT)</label>
+                            <label className="block text-gray-700 dark:text-white font-semibold">Result Datetime (GMT)</label>
                             <input
                                 type="text"
-                                className="w-full h-10 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                                className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 disabled={true}
                                 value={GMTTimeZoneDateUnix || ''}
                             ></input>
