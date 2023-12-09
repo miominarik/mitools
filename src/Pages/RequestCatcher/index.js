@@ -7,12 +7,12 @@ import Pusher from "pusher-js";
 function RequestCatcher() {
     useEffect(() => {
         const GenerateCatchUrl = (uuid_comp) => {
-            const url = process.env.REACT_APP_API_URL + '/api/create';
+            const url = process.env.REACT_APP_API_URL + '/create';
             sendPostRequest(url, {uuid: uuid_comp})
                 .then((response) => {
                     if (response.url && response.url !== undefined && response.url !== null && response.url !== "") {
                         const catch_url = document.getElementById('catch_url');
-                        catch_url.value = process.env.REACT_APP_API_URL + "/api/catch/" + response.url;
+                        catch_url.value = process.env.REACT_APP_API_URL + "/catch/" + response.url;
                         let uuid = false;
                         uuid = response.url;
                         showLog(uuid);
