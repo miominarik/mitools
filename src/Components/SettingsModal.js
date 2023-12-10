@@ -15,12 +15,12 @@ function SettingsModal({isOpen, setIsOpen, ChangeTheme, actual_theme}) {
                     <div className="text-gray-700">
                         <div className="mb-4">
                             <label className="block text-gray-700 dark:text-white font-semibold">Theme</label>
-                            <select
+                            <select value={actual_theme}
                                 className="w-full h-10 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                                 onChange={ChangeTheme}>
-                                <option selected={actual_theme === 'auto'} value="auto">Sync with system</option>
-                                <option selected={actual_theme === 'light'} value="light">Light</option>
-                                <option selected={actual_theme === 'dark'} value="dark">Dark</option>
+                                <option value="auto">Sync with system</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
                             </select>
                         </div>
                     </div>
